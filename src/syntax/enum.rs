@@ -17,3 +17,46 @@ fn calculated_area(shape :Shape)->f32{
   };
   return area;
 }
+
+
+
+
+// without Enum and pattern matching
+// fn main (){
+//   let indi=  find_str(String::from("lmit"));
+//   if indi!=-1{
+//     println!("it contains a in the string")
+//   }
+//   else{
+//     println!("no it does not contain string")
+//   }
+// fn find_str(x:String)->i32{
+// for(index , val) in x.chars().enumerate(){
+//     if val=='a'{
+// return index as i32;
+
+// }
+
+// }
+// return -1;
+// }
+// }
+
+
+fn main(){
+    let indi=find_str(String::from("mita"));
+match indi {
+    Some(val)=>println!("yes it contains {}" , val ),
+    None=>println!("a is not in the string")
+}
+
+    fn find_str(x:String)->Option<i32>{
+for(ind , val) in x.chars().enumerate(){
+if val=='a'{
+    return Some(ind as i32) ;
+}
+
+    }
+    return None;
+}
+}
